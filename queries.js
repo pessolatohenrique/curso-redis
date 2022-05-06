@@ -17,3 +17,24 @@ GET "alunos_concluidos"
 
 DEL "ultimo_aluno"
 GET "ultimo_aluno"
+
+/**
+ * listagem de todas as chaves
+ * como melhor forma de padronização, é interessante utilizar : (dois pontos) nos nomes de chaves
+ */
+KEYS *
+SET resultado:2022-05-06:megasena "02, 05, 15, 20, 30"
+SET resultado:2022-04-29:megasena "05, 10, 20, 35, 42"
+GET "resultado:2022-05-06:megasena"
+
+/**
+ * é possível buscar de diferentes formas com a utilização do "*
+ */
+MSET resultado:2022-05-01:megasena "01, 15, 20, 34, 42" resultado:2022-04-20:megasena "09, 19, 29, 39, 49" resultado:2022-04-05:megasena "01, 06, 35, 40, 41"
+SET resultado:2022-05-06:lotosena "01, 09, 10, 11, 15"
+KEYS resultado:*
+KEYS resultado:*:megasena
+KEYS resultado:2022-05-*
+KEYS resultado:2022-*-?
+KEYS resultado:*sena
+KEYS resultado:2022-05-0*
