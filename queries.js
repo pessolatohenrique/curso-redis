@@ -38,3 +38,9 @@ KEYS resultado:2022-05-*
 KEYS resultado:2022-*-?
 KEYS resultado:*sena
 KEYS resultado:2022-05-0*
+
+/** 
+ * busca utilizando "OU"
+*/
+KEYS resultado:2022-?[45]-*
+KEYS "resultado:2022-05-0[61]:*"
