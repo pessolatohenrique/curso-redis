@@ -44,3 +44,14 @@ KEYS resultado:2022-05-0*
 */
 KEYS resultado:2022-?[45]-*
 KEYS "resultado:2022-05-0[61]:*"
+
+
+/**
+ * utilizando hashs (dicionários)
+ */
+HSET resultado:2022-05-10 "numeros" "05, 07, 15, 23, 42"
+HSET resultado:2022-05-10 "ganhadores" 15
+HGET resultado:2022-05-10 "numeros"
+HGET resultado:2022-05-10 "ganhadores"
+HMSET resultado:2022-05-01 "numeros" "01, 09, 16, 21, 40" "ganhadores" 10
+HGET resultado:2022-05-01 "ganhadores"
