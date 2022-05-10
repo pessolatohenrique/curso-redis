@@ -55,3 +55,12 @@ HGET resultado:2022-05-10 "numeros"
 HGET resultado:2022-05-10 "ganhadores"
 HMSET resultado:2022-05-01 "numeros" "01, 09, 16, 21, 40" "ganhadores" 10
 HGET resultado:2022-05-01 "ganhadores"
+HGETALL resultado:2022-05-01
+
+/**
+ * sessão de um usuário com expiração
+ */
+HSET usuario:1675 "username" "pessolatohenrique" "cart_items" 3 "category" "premium"
+HGETALL usuario:1675
+EXPIRE usuario:1675 1800
+TTL usuario:1675
