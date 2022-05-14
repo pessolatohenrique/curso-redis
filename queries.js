@@ -77,7 +77,6 @@ INCRBYFLOAT compra:1675:total 35.9
 INCRBYFLOAT compra:1675:total 50.1
 INCRBYFLOAT compra:1675:total -15
 
-
 /**
  * armazenando um conjunto de booleanos
  */
@@ -88,3 +87,11 @@ SETBIT acesso:2022-05-13 2000 1
 SETBIT acesso:2022-05-13 3000 1
 BITCOUNT acesso:2022-05-14
 BITCOUNT acesso:2022-05-13
+
+/**
+ * operadores relacionais em booleanos
+ */
+BITOP and "acessos:2022-05-14and2022-05-13" acesso:2022-05-14 acesso:2022-05-13
+BITCOUNT "acessos:2022-05-14and2022-05-13" 
+BITOP or "acessos-2022-05-14or2022-05-13" acesso:2022-05-14 acesso:2022-05-13
+BITCOUNT "acessos-2022-05-14or2022-05-13"
