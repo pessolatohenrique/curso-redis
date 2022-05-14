@@ -64,3 +64,15 @@ HSET usuario:1675 "username" "pessolatohenrique" "cart_items" 3 "category" "prem
 HGETALL usuario:1675
 EXPIRE usuario:1675 1800
 TTL usuario:1675
+
+/**
+ * incrementando ou decrementando valores
+ */
+INCR jogadores:/jogo
+INCR jogadores:/jogo
+INCR jogadores:/jogo
+DECR jogadores:/jogo
+INCRBYFLOAT compra:1675:total 15
+INCRBYFLOAT compra:1675:total 35.9
+INCRBYFLOAT compra:1675:total 50.1
+INCRBYFLOAT compra:1675:total -15
