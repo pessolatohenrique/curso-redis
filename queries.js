@@ -76,3 +76,15 @@ INCRBYFLOAT compra:1675:total 15
 INCRBYFLOAT compra:1675:total 35.9
 INCRBYFLOAT compra:1675:total 50.1
 INCRBYFLOAT compra:1675:total -15
+
+
+/**
+ * armazenando um conjunto de booleanos
+ */
+SETBIT acesso:2022-05-14 1000 1
+SETBIT acesso:2022-05-14 2000 1
+SETBIT acesso:2022-05-13 1000 1
+SETBIT acesso:2022-05-13 2000 1
+SETBIT acesso:2022-05-13 3000 1
+BITCOUNT acesso:2022-05-14
+BITCOUNT acesso:2022-05-13
