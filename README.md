@@ -1,4 +1,4 @@
-# Curso de MongoDB
+# Curso de Redis
 
 ### Sobre
 
