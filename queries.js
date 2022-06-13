@@ -95,3 +95,13 @@ BITOP and "acessos:2022-05-14and2022-05-13" acesso:2022-05-14 acesso:2022-05-13
 BITCOUNT "acessos:2022-05-14and2022-05-13" 
 BITOP or "acessos-2022-05-14or2022-05-13" acesso:2022-05-14 acesso:2022-05-13
 BITCOUNT "acessos-2022-05-14or2022-05-13"
+
+/**
+ * realizando operações em listas
+ */
+LPUSH ultimas_noticias "Noticia 1" "Noticia 2"
+LPUSH ultimas_noticias "Noticia 3" "Noticia 4"
+LRANGE ultimas_noticias 0 4
+LTRIM ultimas_noticias 0 2
+LINDEX ultimas_noticias 1
+LLEN ultimas_noticias
