@@ -103,5 +103,15 @@ LPUSH ultimas_noticias "Noticia 1" "Noticia 2"
 LPUSH ultimas_noticias "Noticia 3" "Noticia 4"
 LRANGE ultimas_noticias 0 4
 LTRIM ultimas_noticias 0 2
-LINDEX ultimas_noticias 1
+LINDEX ultimas_noticias 0
 LLEN ultimas_noticias
+
+/**
+ * realizando operações em filas
+ */
+RPUSH fila:emails_confirmacao "pessolatohenrique@gmail.com"
+RPUSH fila:emails_confirmacao "roberta.miranda@gmail.com"
+RPUSH fila:emails_confirmacao "pedro.sampaio@gmail.com"
+RPUSH fila:emails_confirmacao "fernanda.rodrigues@gmail.com"
+LRANGE fila:emails_confirmacao 0 3
+LPOP fila:emails_confirmacao
