@@ -115,3 +115,30 @@ RPUSH fila:emails_confirmacao "pedro.sampaio@gmail.com"
 RPUSH fila:emails_confirmacao "fernanda.rodrigues@gmail.com"
 LRANGE fila:emails_confirmacao 0 3
 LPOP fila:emails_confirmacao
+
+/**
+ * realizando operações em filas sem "busy wait"
+ * ou seja, sem consultar a todo momento se tem alguém na fila
+ */
+BLPOP fila:emails_confirmacao 30
+BLPOP fila:emails_confirmacao 30
+BLPOP fila:emails_confirmacao 30
+BLPOP fila:emails_confirmacao 30
+RPUSH fila:emails_confirmacao "pessolatohenrique@gmail.com"
+RPUSH fila:emails_confirmacao "roberta.miranda@gmail.com"
+BLPOP fila:emails_confirmacao 30
+
+/**
+ * realizando operações em conjuntos
+ * os conjuntos não possuem uma ordem específica, e podem ser trabalhados
+ * com operações dos conjuntos matemáticos (exemplo: intersecção)
+ */
+SADD amigos:paulo "joao" "bianca" "carlos" "roberta"
+SADD amigos:carlos "bianca" "roberta"
+SMEMBERS amigos:paulo
+SISMEMBER amigos:paulo "bianca"
+SISMEMBER amigos:paulo "joana"
+SCARD amigos:paulo
+SINTER amigos:paulo amigos:carlos
+SDIFF amigos:paulo amigos:carlos
+SUNION amigos:paulo amigos:carlos
